@@ -12,10 +12,16 @@ export default defineNuxtConfig({
         { name: 'keywords', content: 'adydetra, Adityawarman, Dewa, Putra, SMKN 1 Jakarta, Frontend Developer, Aptrocode' },
         { name: 'author', content: 'Adityawarman Dewa Putra' },
       ],
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon/favicon.svg' },
+        { rel: 'icon', type: 'image/png', href: '/favicon/favicon-96x96.png', sizes: '96x96' },
+        { rel: 'apple-touch-icon', href: '/favicon/apple-touch-icon.png' },
+        { rel: 'manifest', href: '/favicon/site.webmanifest' },
+      ],
     },
   },
 
-  css: ['./app/assets/css/main.css'],
+  css: ['~/assets/css/main.css'],
 
   vite: {
     plugins: [
@@ -29,10 +35,18 @@ export default defineNuxtConfig({
     },
   },
 
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false, // Allows <TheHero> instead of <OrganismsTheHero>
+      ignore: ['**/variants.ts'],
+    },
+  ],
+
   modules: ['@nuxt/image', '@nuxtjs/sitemap'],
 
   site: {
-    url: 'https://ose.vercel.app',
+    url: 'https://www.ose.web.id',
   },
 
   devtools: {
@@ -41,6 +55,10 @@ export default defineNuxtConfig({
 
   sitemap: {
     xsl: false,
+  },
+
+  runtimeConfig: {
+    githubToken: '',
   },
 
   compatibilityDate: '2025-11-19',
