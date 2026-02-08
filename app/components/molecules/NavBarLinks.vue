@@ -9,15 +9,15 @@ const items = [
 
 <template>
   <nav class="hidden md:flex gap-6 text-sm font-medium text-neutral-400">
-    <a
+    <NuxtLink
       v-for="item in items"
       :key="item.text"
-      :href="item.href"
+      :to="item.href"
       :target="item.target"
       class="hover:text-neutral-100 transition-colors flex items-center gap-1"
     >
       {{ item.text }}
       <ArrowUpRight v-if="item.icon" class="w-3 h-3 text-neutral-500" />
-    </a>
+    </NuxtLink>
   </nav>
 </template>
