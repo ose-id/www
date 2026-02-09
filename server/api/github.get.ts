@@ -103,7 +103,7 @@ export default defineCachedEventHandler(async () => {
     enrichedMembers.sort((a, b) => b.contributions - a.contributions);
 
     return {
-      followers: members?.length || user.followers,
+      followers: user.followers,
       stars,
       forks,
       activity: aggregatedActivity,
