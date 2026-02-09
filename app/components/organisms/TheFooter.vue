@@ -64,7 +64,12 @@ const legalLinks = [
           </h4>
           <ul class="space-y-4">
             <li v-for="link in companyLinks" :key="link.text">
-              <a :href="link.href" class="text-neutral-400 hover:text-white transition-colors">{{ link.text }}</a>
+              <NuxtLink
+                :to="link.href"
+                class="text-neutral-400 hover:text-white transition-colors"
+              >
+                {{ link.text }}
+              </NuxtLink>
             </li>
           </ul>
         </div>
