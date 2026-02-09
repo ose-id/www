@@ -25,8 +25,8 @@ const companyLinks = [
 ];
 
 const legalLinks = [
-  { text: 'Privacy', href: '#' },
-  { text: 'Terms', href: '#' },
+  { text: 'Privacy', href: '/privacy-policy' },
+  { text: 'Terms', href: '/terms-of-service' },
 ];
 </script>
 
@@ -88,9 +88,9 @@ const legalLinks = [
       <div class="mt-20 pt-8 border-t border-neutral-900 text-xs text-neutral-600 flex flex-col md:flex-row justify-between items-center gap-4">
         <p>&copy; {{ new Date().getFullYear() }} OSE Organization. All Rights Reserved.</p>
         <div class="flex gap-6">
-          <a v-for="link in legalLinks" :key="link.text" :href="link.href" class="hover:text-neutral-400 transition-colors">
+          <NuxtLink v-for="link in legalLinks" :key="link.text" :to="link.href" class="hover:text-neutral-400 transition-colors">
             {{ link.text }}
-          </a>
+          </NuxtLink>
         </div>
       </div>
     </div>
