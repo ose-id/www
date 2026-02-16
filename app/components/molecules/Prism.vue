@@ -75,7 +75,9 @@ function setup() {
   const HOVSTR = Math.max(0, props.hoverStrength || 1);
   const INERT = Math.max(0, Math.min(1, props.inertia || 0.12));
 
-  const dpr = Math.min(2, window.devicePixelRatio || 1);
+  const isMobile = window.innerWidth < 768; // Simple breakpoint check
+  const STEPS = isMobile ? 30 : 100;
+  const dpr = Math.min(isMobile ? 1.0 : 2.0, window.devicePixelRatio || 1);
   const renderer = new Renderer({
     dpr,
     alpha: props.transparent,
@@ -192,7 +194,7 @@ function setup() {
           wob = mat2(c0, c1, c2, c0);
         }
 
-        const int STEPS = 100;
+        const int STEPS = ${STEPS};
         for (int i = 0; i < STEPS; i++) {
           p = vec3(f, z);
           p.xz = p.xz * wob;
@@ -397,8 +399,7 @@ function setup() {
       program.uniforms.uRot.value = setMat3FromEuler(yaw, pitch, roll, rotBuf);
 
       if (NOISE_IS_ZERO) {
-        const settled
-          = Math.abs(yaw - targetYaw) < 1e-4 && Math.abs(pitch - targetPitch) < 1e-4 && Math.abs(roll) < 1e-4;
+        const settled = Math.abs(yaw - targetYaw) < 1e-4 && Math.abs(pitch - targetPitch) < 1e-4 && Math.abs(roll) < 1e-4;
         if (settled)
           continueRAF = false;
       }
@@ -461,9 +462,7 @@ function setup() {
       window.removeEventListener('blur', onBlur);
     }
     if (props.suspendWhenOffscreen) {
-      const io = (container as HTMLElement & { __prismIO?: IntersectionObserver }).__prismIO as
-        | IntersectionObserver
-        | undefined;
+      const io = (container as HTMLElement & { __prismIO?: IntersectionObserver }).__prismIO as IntersectionObserver | undefined;
       if (io)
         io.disconnect();
       delete (container as HTMLElement & { __prismIO?: IntersectionObserver }).__prismIO;
