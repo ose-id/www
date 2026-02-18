@@ -123,7 +123,7 @@ export default defineCachedEventHandler(async () => {
     };
   }
 }, {
-  maxAge: 300, // Cache for 5 minutes
-  staleMaxAge: 600, // Serve stale content for up to 10 minutes while revalidating
+  maxAge: 60, // Cache for 1 minute
+  staleMaxAge: 3600, // Serve stale content for up to 1 hour while revalidating
   swr: true, // Stale-while-revalidate: return cached data immediately, refresh in background
 });
