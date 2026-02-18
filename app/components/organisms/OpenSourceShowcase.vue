@@ -1,11 +1,20 @@
 <script setup lang="ts">
-import { ArrowRight, GitFork, Hammer, Package, Sparkles, Star, Zap } from 'lucide-vue-next';
+import { ArrowRight, GitFork, Hammer, Package, Sparkles, Star } from 'lucide-vue-next';
+
+// Custom Velocity Logo Component
+const VelocityLogo = defineComponent({
+  render: () => h('img', {
+    src: '/img/velocity-logo.svg',
+    alt: 'Velocity Logo',
+    // Classes will be inherited from parent usage
+  }),
+});
 
 // Helper to get icon component
 function getProjectIcon(id: string) {
   switch (id) {
     case 'velocity':
-      return Zap;
+      return VelocityLogo;
     case 'project-2':
       return Sparkles;
     case 'project-3':
@@ -156,11 +165,14 @@ function scrollToProject(id: string) {
                 class="w-6 h-6 flex items-center justify-center rounded-md text-xs"
                 :class="[
                   activeProject === project.id
-                    ? 'bg-neutral-700 text-white'
-                    : 'bg-neutral-800 text-neutral-500',
+                    ? (project.id === 'velocity' ? '' : 'bg-neutral-700 text-white')
+                    : (project.id === 'velocity' ? 'opacity-50' : 'bg-neutral-800 text-neutral-500'),
                 ]"
               >
-                <component :is="getProjectIcon(project.id)" class="w-3.5 h-3.5" />
+                <component
+                  :is="getProjectIcon(project.id)"
+                  :class="project.id === 'velocity' ? 'w-5 h-5' : 'w-3.5 h-3.5'"
+                />
               </span>
               <span>{{ project.title }}</span>
             </button>
