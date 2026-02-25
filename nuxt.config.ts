@@ -9,8 +9,13 @@ export default defineNuxtConfig({
         lang: 'en',
       },
       meta: [
-        { name: 'keywords', content: 'adydetra, Adityawarman, Dewa, Putra, SMKN 1 Jakarta, Frontend Developer, Aptrocode' },
-        { name: 'author', content: 'Adityawarman Dewa Putra' },
+        { name: 'keywords', content: 'OSE, open source, community, volunteers, programming, projects, development' },
+        { name: 'author', content: 'OSE' },
+        { property: 'og:title', content: 'OSE - Open Source Community' },
+        { property: 'og:description', content: 'A community of volunteers with a passion for creation—both individually and through open source projects' },
+        { property: 'og:image', content: '/img/ose-og-image.jpg' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: 'https://www.ose.web.id' },
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon/favicon.svg' },
