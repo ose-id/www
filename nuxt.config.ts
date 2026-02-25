@@ -12,10 +12,11 @@ export default defineNuxtConfig({
         { name: 'keywords', content: 'OSE, open source, community, volunteers, programming, projects, development' },
         { name: 'author', content: 'OSE' },
         { property: 'og:title', content: 'OSE - Open Source Community' },
+        { property: 'og:url', content: 'https://www.ose.web.id' },
         { property: 'og:description', content: 'A community of volunteers with a passion for creation—both individually and through open source projects' },
         { property: 'og:image', content: '/img/ose-og-image.jpg' },
         { property: 'og:type', content: 'website' },
-        { property: 'og:url', content: 'https://www.ose.web.id' },
+        { name: 'twitter:card', content: 'summary_large_image' },
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon/favicon.svg' },
