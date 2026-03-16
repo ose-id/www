@@ -248,7 +248,7 @@ function scrollToProject(id: string) {
                 />
                 <div
                   v-else
-                  class="w-full h-full min-h-[300px] flex items-center justify-center text-neutral-600 bg-gradient-to-br from-neutral-900 to-neutral-800"
+                  class="w-full h-full min-h-[300px] flex items-center justify-center text-neutral-600 bg-linear-to-br from-neutral-900 to-neutral-800"
                 >
                   <span class="text-sm">Image Coming Soon</span>
                 </div>

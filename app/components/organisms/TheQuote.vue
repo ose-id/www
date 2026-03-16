@@ -22,12 +22,12 @@ function handleMouseMove(e: MouseEvent) {
   >
     <!-- Background Gradient (Ambient - Centered & Sides) -->
     <!-- Left to Center Fade -->
-    <div class="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-neutral-900 to-transparent pointer-events-none" />
+    <div class="absolute inset-y-0 left-0 w-1/2 bg-linear-to-r from-neutral-900 to-transparent pointer-events-none" />
     <!-- Right to Center Fade -->
-    <div class="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-neutral-900 to-transparent pointer-events-none" />
+    <div class="absolute inset-y-0 right-0 w-1/2 bg-linear-to-l from-neutral-900 to-transparent pointer-events-none" />
 
     <!-- Central Glow -->
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_var(--tw-gradient-stops))] from-neutral-800/50 via-neutral-950/0 to-neutral-950/0 pointer-events-none" />
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,var(--tw-gradient-stops))] from-neutral-800/50 via-neutral-950/0 to-neutral-950/0 pointer-events-none" />
 
     <!-- Cursor Spotlight -->
     <div
@@ -38,7 +38,7 @@ function handleMouseMove(e: MouseEvent) {
     />
 
     <!-- Bottom Fade -->
-    <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-neutral-950 to-transparent pointer-events-none" />
+    <div class="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-neutral-950 to-transparent pointer-events-none" />
 
     <div class="container mx-auto px-4 text-center relative z-10">
       <blockquote class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif italic text-neutral-200 max-w-4xl mx-auto leading-tight transition-colors duration-300 group-hover:text-white">
