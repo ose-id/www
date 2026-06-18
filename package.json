@@ -12,22 +12,22 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.2.4",
+    "@tailwindcss/vite": "^4.3.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-vue-next": "^1.0.0",
-    "nuxt": "^4.4.4",
+    "nuxt": "^4.4.8",
     "ogl": "^1.0.11",
     "radix-vue": "^1.9.17",
-    "tailwind-merge": "^3.5.0",
-    "tailwindcss": "^4.2.4",
-    "vue": "^3.5.33",
-    "vue-router": "^5.0.6"
+    "tailwind-merge": "^3.6.0",
+    "tailwindcss": "^4.3.1",
+    "vue": "^3.5.38",
+    "vue-router": "^5.1.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^8.2.0",
+    "@antfu/eslint-config": "^9.0.0",
     "@nuxt/image": "^2.0.0",
-    "@nuxtjs/sitemap": "^8.0.15",
-    "eslint": "^10.3.0"
+    "@nuxtjs/sitemap": "^8.2.1",
+    "eslint": "^10.5.0"
   }
 }
